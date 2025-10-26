@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小星的圣诞树</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #0a0a0a;
+            color: #c5a880;
+            font-family: sans-serif;
+        }
+
+        #title {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            color: #ffebee;
+            font-size: 2.5rem;
+            text-shadow: 0 0 30px rgba(255, 235, 238, 0.8);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        #toXiaoXing {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 100;
+            color: #e1bee7;
+            font-size: 1.8rem;
+            text-shadow: 0 0 25px rgba(225, 190, 231, 0.8);
+            font-weight: bold;
+        }
+
+        #merryChristmas {
+            position: fixed;
+            top: 110px;
+            left: 20px;
+            z-index: 100;
+            color: #ce93d8;
+            font-size: 1.5rem;
+            text-shadow: 0 0 20px rgba(206, 147, 216, 0.8);
+        }
+
+        #signature {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 100;
+            color: #ffd9ec;
+            font-size: 1.8rem;
+            text-shadow: 0 0 25px rgba(255, 217, 236, 0.8);
+            font-weight: bold;
+        }
+
+        #time {
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            z-index: 100;
+            color: #b39ddb;
+            font-size: 1.3rem;
+            text-shadow: 0 0 20px rgba(179, 157, 219, 0.8);
+            font-family: 'Courier New', monospace;
+        }
+
+        #countdown {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            color: #ba68c8;
+            font-size: 1.1rem;
+            text-shadow: 0 0 20px rgba(186, 104, 200, 0.8);
+        }
+        
+        #snow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        #snowCanvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        #musicPlayer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        #musicPlayer audio {
+            display: none;
+        }
+        
+        #playButton {
+            background: rgba(255, 235, 238, 0.2);
+            border: 2px solid #ffebee;
+            color: #ffebee;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        #playButton:hover {
+            background: rgba(255, 235, 238, 0.3);
+            transform: scale(1.05);
+        }
+
+        .star-symbol {
+            display: inline-block;
+            animation: starTwinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="snow">
+        <canvas id="snowCanvas"></canvas>
+    </div>
+    
+    <div id="title"><span class="star-symbol">❤️</span> 小星 <span class="star-symbol">❤️</span></div>
+    <div id="toXiaoXing">To 小星</div>
+    <div id="merryChristmas">圣诞快乐 ✨</div>
+    
+    <div id="signature"><span class="star-symbol">⭐</span> Merry Christmas <span class="star-symbol">⭐</span></div>
+    <div id="time">00:00:00</div>
+    <div id="countdown">距离圣诞还有 0 天</div>
+    
+    <div id="musicPlayer">
+        <button id="playButton">🎵 播放音乐</button>
+        <audio id="audioPlayer" loop>
+            <source src="song.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.115.0/build/three.min.js"></script>
+    <script src="Snowflakes-master/js/snow.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
