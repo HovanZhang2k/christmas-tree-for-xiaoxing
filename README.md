@@ -63,9 +63,9 @@ christmas-tree-for-xiaoxing/
 
 祝小星圣诞快乐，永远开心！✨
 
-## 📝 License
+## 🙏 致谢
 
-MIT License
+雪花效果参考了 [emosheeep/Snowflakes](https://github.com/emosheeep/Snowflakes) 项目的实现方式。
 
 ---
 Made with ❤️ by HovanZhang2k
