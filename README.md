@@ -4,7 +4,7 @@
 
 ## 📹 效果演示
 
-https://github.com/user-attachments/assets/demo.mp4
+![Demo Video](demo.mp4)
 
 代码运行效果大概如视频所示。
 
